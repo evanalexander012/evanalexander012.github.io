@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './resume.component.scss'
 })
 export class ResumeComponent {
-  @Input() active = false;
+  
 }

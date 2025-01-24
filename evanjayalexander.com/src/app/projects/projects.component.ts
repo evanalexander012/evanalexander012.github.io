@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-  @Input() active: boolean = false;
+  
 }

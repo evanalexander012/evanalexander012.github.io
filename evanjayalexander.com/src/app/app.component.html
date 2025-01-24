@@ -7,15 +7,15 @@
     </ng-container>
 </header>
 <p>Body Test</p>
-<home-component *ngIf="homeActive" [active]="homeActive">
-    Test123
+<home-component *ngIf="pages['home'].status">
+    Home Test
 </home-component>
-<!-- <about-me-component *ngIf="aboutMeActive" [active]="aboutMeActive">
-
+<about-me-component *ngIf="pages['about-me'].status">
+    About Me Test
 </about-me-component>
-<resume-component *ngIf="resumeActive" [active]="resumeActive">
-
+<resume-component *ngIf="pages['resume'].status">
+    Resume Test
 </resume-component>
-<projects-component *ngIf="projectsActive" [active]="projectsActive">
-
-</projects-component> -->
+<projects-component *ngIf="pages['projects'].status">
+    Projects Test
+</projects-component>

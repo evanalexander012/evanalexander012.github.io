@@ -20,11 +20,6 @@ interface navButtons {
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'evanjayalexander.com';
 
-  homeActive: boolean = true;
-  aboutMeActive: boolean = false;
-  resumeActive: boolean = false;
-  projectsActive: boolean = false;
-
   pages: navButtons = {
     "home": { display: "Home", status: false },
     "about-me": { display: "About Me", status: false },
@@ -55,6 +50,5 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onNavButtonClick(pageName: string) {
     this.setPageStatus(pageName);
-    console.log(this.pages);
   }
 }
