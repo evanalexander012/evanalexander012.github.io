@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+header {
+    background-color: darkslategray;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: inline-flex;
+    width: 100%;
+}
+nav {
+    background-color: darkslategray;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+main {
+    padding: 2rem;
+}
+footer {
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.sidenav-container {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+}
+.sidenav-side {
+    background-color: purple;
+    width: 50%;
+}
+.sidenav-main {
+    padding: 5px 15px 5px 15px;
+    background-color: red;
+    width: 50%;
+}
+button {
+    pointer-events: all;
+}
