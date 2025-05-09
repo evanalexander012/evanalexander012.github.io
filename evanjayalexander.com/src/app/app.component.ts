@@ -2,8 +2,10 @@ import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angul
 import { RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button'
-import { NgIf, NgFor, KeyValuePipe } from '@angular/common';
+import { NgIf, NgFor, KeyValuePipe, KeyValue } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 interface navButtons {
   [name: string] : { display: string, status: boolean }
@@ -12,7 +14,7 @@ interface navButtons {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatSidenavModule, MatButtonModule, NgIf, NgFor, KeyValuePipe, FormsModule, ReactiveFormsModule],
+  imports: [MatSidenavModule, MatButtonModule, NgIf, NgFor, KeyValuePipe, FormsModule, ReactiveFormsModule, HomeComponent, AboutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -20,9 +22,10 @@ interface navButtons {
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'evanjayalexander.com';
 
+
   pages: navButtons = {
     "home": { display: "Home", status: false },
-    "about-me": { display: "About Me", status: false },
+    "about": { display: "About", status: false },
     "resume": { display: "Resume", status: false },
     "projects": { display: "Projects", status: false }
   };
@@ -37,6 +40,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     
   }
+
+  // Used to avoid pipe from auto sorting alphabetically
+  keepOrder = () => 0;
 
   setPageStatus(pageName: string): void {
     this.navButtonsArray.forEach(btn => {

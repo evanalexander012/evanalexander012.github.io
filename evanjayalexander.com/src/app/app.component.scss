@@ -1,58 +1,41 @@
-body {
+#all-content {
+    background-color: #4B0082;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensure elements stretch to fill container */
+    width: 100%;
+    height: 100%;
+
+    background-image: url('../assets/background.png');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+#body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
+    padding: 50px 200px 50px 200px;
     color: #333;
+    height: 1000px;
+    justify-content: center;
+    display: inline-flex;
+    overflow-x: hidden;
 }
 header {
-    background-color: darkslategray;
     color: white;
-    padding: 1rem;
     text-align: center;
     display: inline-flex;
     width: 100%;
+    padding-top: 50px;
+
+    button {
+        color: white;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
-nav {
-    background-color: darkslategray;
-    color: white;
-    padding: 0.5rem;
-    text-align: center;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-}
-nav a:hover {
-    text-decoration: underline;
-}
-main {
-    padding: 2rem;
-}
-footer {
-    background-color: darkslategray;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
+#nav-container {
+    padding-left: 25px;
     width: 100%;
-}
-.sidenav-container {
-    display: inline-flex;
-    width: 100%;
-    flex-direction: row;
-}
-.sidenav-side {
-    background-color: purple;
-    width: 50%;
-}
-.sidenav-main {
-    padding: 5px 15px 5px 15px;
-    background-color: red;
-    width: 50%;
-}
-button {
-    pointer-events: all;
+    display: flex;
+    justify-content: center;
 }

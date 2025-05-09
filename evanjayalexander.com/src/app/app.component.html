@@ -1,21 +1,24 @@
-<header>
-    <h1>Evan Alexander</h1>
-    <ng-container *ngFor="let page of pages | keyvalue">
-        <button mat-button (click)="onNavButtonClick(page.key)">
-            {{ page.value.display }}
-        </button>
-    </ng-container>
-</header>
-<p>Body Test</p>
-<home-component *ngIf="pages['home'].status">
-    Home Test
-</home-component>
-<about-me-component *ngIf="pages['about-me'].status">
-    About Me Test
-</about-me-component>
-<resume-component *ngIf="pages['resume'].status">
-    Resume Test
-</resume-component>
-<projects-component *ngIf="pages['projects'].status">
-    Projects Test
-</projects-component>
+<div id="all-content">
+    <header>
+        <div id="nav-container">
+            <ng-container *ngFor="let page of pages | keyvalue: keepOrder">
+                <button mat-button (click)="onNavButtonClick(page.key)">
+                    {{ page.value.display }}
+                </button>
+            </ng-container>
+        </div>
+    </header>
+    <div id="body">
+        <home-component *ngIf="pages['home'].status">
+        </home-component>
+        <about-component *ngIf="pages['about'].status">
+            About Test
+        </about-component>
+        <resume-component *ngIf="pages['resume'].status">
+            Resume Test
+        </resume-component>
+        <projects-component *ngIf="pages['projects'].status">
+            Projects Test
+        </projects-component>
+    </div>
+</div>
