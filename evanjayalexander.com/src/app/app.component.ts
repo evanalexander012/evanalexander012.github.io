@@ -1,11 +1,13 @@
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button'
-import { NgIf, NgFor, KeyValuePipe, KeyValue } from '@angular/common';
+import { NgIf, NgFor, KeyValuePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 interface navButtons {
   [name: string] : { display: string, status: boolean }
@@ -14,14 +16,16 @@ interface navButtons {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatSidenavModule, MatButtonModule, NgIf, NgFor, KeyValuePipe, FormsModule, ReactiveFormsModule, HomeComponent, AboutComponent],
+  imports: [MatSidenavModule, MatButtonModule, NgIf, NgFor, KeyValuePipe, FormsModule, ReactiveFormsModule, HomeComponent, AboutComponent, FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'evanjayalexander.com';
-
+  faLinkedin = faLinkedin;
+  faGithub = faGithub;
+  faEnvelope = faEnvelope;
 
   pages: navButtons = {
     "home": { display: "Home", status: false },

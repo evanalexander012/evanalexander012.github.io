@@ -13,6 +13,8 @@
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    padding-bottom: 150px;
+    overflow: auto;
 
     background-image: url('../assets/background.jpg');
     background-size: 300px;
@@ -28,17 +30,7 @@
     z-index: 1;
 }
 
-#body {
-    font-family: Arial, sans-serif;
-    padding: 50px 200px 50px 200px;
-    color: #333;
-    height: 100vh;
-    justify-content: center;
-    display: inline-flex;
-    overflow-x: hidden;
-}
 header {
-    color: white;
     text-align: center;
     display: inline-flex;
     width: 100%;
@@ -49,19 +41,40 @@ header {
         border-radius: 15px;
         border: 1px solidrgb(41, 13, 73);
         box-shadow: 0px 2px 2px 1px rgba(0,0,0,0.2);
-        color: white;
+        color: rgb(212, 211, 211, 0.986);
         padding: 5px 15px 5px;
         margin-left: 15px;
         margin-right: 15px;
     }
 }
 #nav-container {
-    padding-left: 25px;
     width: 100%;
     display: flex;
     justify-content: center;
     z-index: 2;
+}
 
+#body {
+    height: 100%;
+}
+
+#footer {
+    position: relative;
+    background-color: rgb(52, 33, 73);
+    display: flex;
+    height: 75px;
+    margin-top: -75px;
+    clear: both;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+
+    #social-links {
+        a {
+            margin: 5px 5px 5px;
+            color: rgb(212, 211, 211, 0.986);
+        }
+    }
 }
 
 @keyframes movingBackground {
