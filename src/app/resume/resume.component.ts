@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
-  selector: 'resume-omponent',
+  selector: 'resume-component',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule, MatListModule],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss'
 })

@@ -1,0 +1,27 @@
+#resume-content {
+    padding-top: 50px;
+}
+
+#content-card {
+    background-color: rgba(212, 211, 211, 0.986);
+    width: 1000px;
+    height: 800px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0px 10px 10px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+#content {
+    margin-left: 15px;
+    height: 90%;
+    width: 90%;
+}
+
+h3 {
+    line-height: 80%;
+}

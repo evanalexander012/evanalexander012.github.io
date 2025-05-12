@@ -8,6 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { ResumeComponent } from './resume/resume.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 interface navButtons {
   [name: string] : { display: string, status: boolean }
@@ -16,7 +18,7 @@ interface navButtons {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatSidenavModule, MatButtonModule, NgIf, NgFor, KeyValuePipe, FormsModule, ReactiveFormsModule, HomeComponent, AboutComponent, FontAwesomeModule],
+  imports: [MatSidenavModule, MatButtonModule, NgIf, NgFor, KeyValuePipe, FormsModule, ReactiveFormsModule, HomeComponent, AboutComponent, ResumeComponent, ProjectsComponent, FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -31,7 +33,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     "home": { display: "Home", status: false },
     "about": { display: "About", status: false },
     "resume": { display: "Resume", status: false },
-    "projects": { display: "Projects", status: false }
+    // "projects": { display: "Projects", status: false }
   };
   
   navButtonsArray = Object.entries(this.pages);
