@@ -1,5 +1,4 @@
 {
-  "devCommand": "node dist/server/main.server.mjs",
   "builds": [
     {
       "src": "package.json",
