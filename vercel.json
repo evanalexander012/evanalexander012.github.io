@@ -1,4 +1,5 @@
 {
+  "devCommand": "node dist/server/main.server.mjs",
   "builds": [
     {
       "src": "package.json",
@@ -8,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/server/$1"
+      "dest": "/dist/browser/$1"
     }
   ]
 }
