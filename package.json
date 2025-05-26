@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:evanjayalexander.com": "node dist/evanjayalexander.com/server/server.mjs",
-    "postbuild": "node .\\post-build.js"
   },
   "engines": {
     "node": "18.x"
