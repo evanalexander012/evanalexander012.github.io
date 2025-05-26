@@ -20,7 +20,6 @@
             "baseHref": "/",
             "outputPath": "dist/evanjayalexander.com",
             "index": "src/index.html",
-            "deployUrl": "/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
