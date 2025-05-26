@@ -7,7 +7,7 @@
     "build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:evanjayalexander.com": "node dist/evanjayalexander.com/server/server.mjs",
+    "serve:ssr:evanjayalexander.com": "node dist/evanjayalexander.com/server/server.mjs"
   },
   "engines": {
     "node": "18.x"
