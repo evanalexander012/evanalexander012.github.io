@@ -18,9 +18,9 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "baseHref": "/",
-            "outputPath": "dist/",
+            "outputPath": "dist/evanjayalexander.com",
             "index": "src/index.html",
-            "deployUrl": "/evanalexander012.github.io/",
+            "deployUrl": "/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -41,12 +41,7 @@
               "src/app/resume/resume.component.scss",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
