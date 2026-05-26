@@ -15,15 +15,20 @@
           <div>
             <h2>
               <a
+                *ngIf="project.showVisitLink !== false"
                 [href]="project.url"
                 target="_blank"
                 rel="noopener noreferrer"
                 >{{ project.name }}</a
               >
+              <span *ngIf="project.showVisitLink === false">{{
+                project.name
+              }}</span>
             </h2>
             <p class="tagline">{{ project.tagline }}</p>
           </div>
           <a
+            *ngIf="project.showVisitLink !== false"
             class="visit-link"
             [href]="project.url"
             target="_blank"

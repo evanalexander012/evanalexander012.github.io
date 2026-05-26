@@ -9,6 +9,7 @@ export interface Project {
   description: string;
   tech: string[];
   images?: { src: string; alt: string }[];
+  showVisitLink?: boolean;
 }
 
 @Component({
@@ -27,6 +28,7 @@ export class ProjectsComponent {
       description:
         'Pack Buddy helps your group balance gear across hikers, track pack weight, and export a clean distribution before you hit the trail. Plan trips locally or sign in to sync and share.',
       tech: ['Angular', 'TypeScript', '.NET', 'SQL'],
+      showVisitLink: true,
       images: [
         {
           src: 'assets/projects/pack-buddy-landing.png',
@@ -45,6 +47,7 @@ export class ProjectsComponent {
       description:
         'This site — an Angular portfolio with home, about, projects, and resume sections, built with Angular Material and server-side rendering.',
       tech: ['Angular', 'TypeScript', 'SCSS', 'Angular Material'],
+      showVisitLink: false,
     },
   ];
 }

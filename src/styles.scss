@@ -8,12 +8,25 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  background-color: #4b0082;
 }
 
-body {
-  margin: 0;
+body.mat-typography {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  padding-bottom: 75px;
+  background-color: #4b0082;
+}
+
+app-root {
+  display: block;
+  min-height: 100%;
+}
+
+/* Center label text inside Material nav buttons */
+header button.mat-mdc-button .mdc-button__label {
+  line-height: 1.25;
 }
 
 a:focus-visible {

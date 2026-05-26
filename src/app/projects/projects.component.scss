@@ -1,6 +1,6 @@
 #projects-content {
   padding-top: 100px;
-  padding-bottom: 150px;
+  padding-bottom: 24px;
 }
 
 #content-card {
@@ -15,9 +15,13 @@
   height: auto;
 }
 
-#content {
-  margin: 5px 15px 20px;
-  width: calc(100% - 30px);
+mat-card-content#content {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 28px 32px 32px;
+  box-sizing: border-box;
+  text-align: left;
 }
 
 #title {
@@ -54,8 +58,12 @@
     margin: 0;
     font-size: 1.6em;
 
-    a {
+    a,
+    span {
       color: #1e3a5f;
+    }
+
+    a {
       text-decoration: none;
 
       &:hover {
