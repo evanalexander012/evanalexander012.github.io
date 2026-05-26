@@ -1,1 +1,52 @@
-<p>projects works!</p>
+<div id="projects-content">
+  <mat-card appearance="outlined" id="content-card">
+    <mat-card-content id="content">
+      <h1 id="title">Projects</h1>
+      <p class="intro">
+        Solo projects I've built outside of work — experiments, tools, and
+        portfolio pieces.
+      </p>
+
+      <article
+        class="project-card"
+        *ngFor="let project of projects"
+      >
+        <div class="project-header">
+          <div>
+            <h2>
+              <a
+                [href]="project.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ project.name }}</a
+              >
+            </h2>
+            <p class="tagline">{{ project.tagline }}</p>
+          </div>
+          <a
+            class="visit-link"
+            [href]="project.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visit site →</a
+          >
+        </div>
+
+        <p class="description">{{ project.description }}</p>
+
+        <div class="tech-stack">
+          <span class="tech-chip" *ngFor="let item of project.tech">{{
+            item
+          }}</span>
+        </div>
+
+        <div class="screenshots" *ngIf="project.images?.length">
+          <figure *ngFor="let image of project.images">
+            <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+            <figcaption>{{ image.alt }}</figcaption>
+          </figure>
+        </div>
+      </article>
+    </mat-card-content>
+  </mat-card>
+</div>

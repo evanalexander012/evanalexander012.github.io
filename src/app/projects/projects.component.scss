@@ -1,0 +1,140 @@
+#projects-content {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+#content-card {
+  background-color: rgba(212, 211, 211, 0.986);
+  max-width: 1100px;
+  width: calc(100% - 90px);
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 5;
+  height: auto;
+}
+
+#content {
+  margin: 5px 15px 20px;
+  width: calc(100% - 30px);
+}
+
+#title {
+  font-size: 2.25em;
+  margin: 0 0 8px;
+}
+
+.intro {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  color: #333;
+}
+
+.project-card {
+  padding: 20px 0;
+  border-top: 1px solid rgba(75, 0, 130, 0.25);
+
+  &:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.6em;
+
+    a {
+      color: #1e3a5f;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-style: italic;
+  color: #2563ab;
+}
+
+.visit-link {
+  white-space: nowrap;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.description {
+  font-size: 1.1em;
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tech-chip {
+  background-color: rgb(52, 33, 73);
+  color: rgb(212, 211, 211, 0.986);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85em;
+}
+
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    display: block;
+  }
+
+  figcaption {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 768px) {
+  #content-card {
+    width: calc(100% - 32px);
+  }
+
+  .screenshots {
+    grid-template-columns: 1fr;
+  }
+}

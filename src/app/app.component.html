@@ -2,7 +2,10 @@
     <header>
         <div id="nav-container">
             <ng-container *ngFor="let page of pages | keyvalue: keepOrder">
-                <button mat-button (click)="onNavButtonClick(page.key)">
+                <button
+                    mat-button
+                    [class.nav-active]="isActivePage(page.key)"
+                    (click)="onNavButtonClick(page.key)">
                     {{ page.value.display }}
                 </button>
             </ng-container>
@@ -13,10 +16,10 @@
         </home-component>
         <about-component *ngIf="pages['about'].status">
         </about-component>
+        <projects-component *ngIf="pages['projects'].status">
+        </projects-component>
         <resume-component *ngIf="pages['resume'].status">
         </resume-component>
-        <!-- <projects-component *ngIf="pages['projects'].status">
-        </projects-component> -->
     </div>
 </div>
 <div id="footer">

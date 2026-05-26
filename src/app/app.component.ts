@@ -1,8 +1,6 @@
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
 import { NgIf, NgFor, KeyValuePipe } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -18,7 +16,7 @@ interface navButtons {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatSidenavModule, MatButtonModule, NgIf, NgFor, KeyValuePipe, FormsModule, ReactiveFormsModule, HomeComponent, AboutComponent, ResumeComponent, ProjectsComponent, FontAwesomeModule],
+  imports: [MatButtonModule, NgIf, NgFor, KeyValuePipe, HomeComponent, AboutComponent, ResumeComponent, ProjectsComponent, FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -30,10 +28,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   faEnvelope = faEnvelope;
 
   pages: navButtons = {
-    "home": { display: "Home", status: false },
-    "about": { display: "About", status: false },
-    "resume": { display: "Resume", status: false },
-    // "projects": { display: "Projects", status: false }
+    home: { display: 'Home', status: false },
+    about: { display: 'About', status: false },
+    projects: { display: 'Projects', status: false },
+    resume: { display: 'Resume', status: false },
   };
   
   navButtonsArray = Object.entries(this.pages);
@@ -62,5 +60,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onNavButtonClick(pageName: string) {
     this.setPageStatus(pageName);
+  }
+
+  isActivePage(pageName: string): boolean {
+    return this.pages[pageName]?.status ?? false;
   }
 }

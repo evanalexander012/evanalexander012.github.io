@@ -4,8 +4,10 @@
 
 #content-card {
     background-color: rgba(212, 211, 211, 0.986);
-    width: 1000px;
-    height: 350px;
+    max-width: 1000px;
+    width: calc(100% - 90px);
+    min-height: 350px;
+    height: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -62,4 +64,24 @@ h1 {
     font-family: Georgia, serif;
     font-size: 1.5em;
     height: 30px;
+}
+
+@media (max-width: 768px) {
+    #home-content {
+        padding-top: 120px;
+    }
+
+    #content-card {
+        width: calc(100% - 32px);
+    }
+
+    #columns {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
 }

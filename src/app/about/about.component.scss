@@ -4,8 +4,10 @@
 
 #content-card {
     background-color: rgba(212, 211, 211, 0.986);
-    width: 1250px;
-    height: 500px;
+    max-width: 1250px;
+    width: calc(100% - 90px);
+    min-height: 500px;
+    height: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -33,4 +35,18 @@ p {
 
 a {
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    #about-content {
+        padding-top: 100px;
+    }
+
+    #content-card {
+        width: calc(100% - 32px);
+    }
+
+    #content {
+        height: auto;
+    }
 }
