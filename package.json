@@ -10,7 +10,7 @@
     "serve:ssr:evanjayalexander.com": "node dist/evanjayalexander.com/server/server.mjs"
   },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "private": true,
   "dependencies": {
