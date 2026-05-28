@@ -8,8 +8,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ResumeComponent } from './resume/resume.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { OwlCompanionComponent } from './owl-companion/owl-companion.component';
-
 interface navButtons {
   [name: string] : { display: string, status: boolean }
 }
@@ -17,7 +15,7 @@ interface navButtons {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatButtonModule, NgIf, NgFor, KeyValuePipe, HomeComponent, AboutComponent, ResumeComponent, ProjectsComponent, OwlCompanionComponent, FontAwesomeModule],
+  imports: [MatButtonModule, NgIf, NgFor, KeyValuePipe, HomeComponent, AboutComponent, ResumeComponent, ProjectsComponent, FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
