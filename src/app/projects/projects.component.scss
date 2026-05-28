@@ -120,6 +120,22 @@ mat-card-content#content {
     margin: 0;
   }
 
+  .screenshot-link {
+    display: block;
+    cursor: zoom-in;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover img {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #27c93f;
+      outline-offset: 2px;
+    }
+  }
+
   img {
     width: 100%;
     height: auto;
@@ -127,6 +143,7 @@ mat-card-content#content {
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     display: block;
+    transition: box-shadow 0.2s ease;
   }
 
   figcaption {

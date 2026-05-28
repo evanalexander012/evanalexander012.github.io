@@ -47,7 +47,15 @@
 
         <div class="screenshots" *ngIf="project.images?.length">
           <figure *ngFor="let image of project.images">
-            <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+            <a
+              class="screenshot-link"
+              [href]="image.src"
+              target="_blank"
+              rel="noopener noreferrer"
+              [title]="'Open full image: ' + image.alt"
+            >
+              <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+            </a>
             <figcaption>{{ image.alt }}</figcaption>
           </figure>
         </div>
