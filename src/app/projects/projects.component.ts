@@ -27,12 +27,12 @@ export class ProjectsComponent {
       url: 'https://packbuddy.net',
       description:
         'Pack Buddy helps your group balance gear across hikers, track pack weight, and export a clean distribution before you hit the trail. Plan trips locally or sign in to sync and share.',
-      tech: ['Angular', 'TypeScript', '.NET', 'SQL'],
+      tech: ['Angular', 'TypeScript', '.NET', 'SQL', 'Azure'],
       showVisitLink: true,
       images: [
         {
           src: 'assets/projects/pack-buddy-landing.png',
-          alt: 'Pack Buddy landing page — Split the weight. Share the plan.',
+          alt: 'Pack Buddy landing page — Fair pack weight for group backpacking',
         },
         {
           src: 'assets/projects/pack-buddy-trip.png',
