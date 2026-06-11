@@ -3,7 +3,7 @@
   padding-bottom: 24px;
 }
 
-#content-card {
+#projects-content #content-card {
   background-color: rgba(212, 211, 211, 0.986);
   max-width: 1100px;
   width: calc(100% - 90px);
@@ -15,28 +15,29 @@
   height: auto;
 }
 
-mat-card-content#content {
+#projects-content mat-card-content#content {
   display: block;
   width: 100%;
   margin: 0;
   padding: 28px 32px 32px;
   box-sizing: border-box;
   text-align: left;
+  font-size: 16px;
 }
 
-#title {
-  font-size: 2.25em;
+#projects-content #title {
+  font-size: 38px;
   margin: 0 0 8px;
 }
 
-.intro {
-  font-size: 1.1em;
+#projects-content .intro {
+  font-size: 19px;
   line-height: 1.5;
   margin-bottom: 28px;
   color: #333;
 }
 
-.project-card {
+#projects-content .project-card {
   padding: 20px 0;
   border-top: 1px solid rgba(75, 0, 130, 0.25);
 
@@ -46,7 +47,7 @@ mat-card-content#content {
   }
 }
 
-.project-header {
+#projects-content .project-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -56,7 +57,7 @@ mat-card-content#content {
 
   h2 {
     margin: 0;
-    font-size: 1.6em;
+    font-size: 27px;
 
     a,
     span {
@@ -73,45 +74,46 @@ mat-card-content#content {
   }
 }
 
-.tagline {
+#projects-content .tagline {
   margin: 4px 0 0;
   font-style: italic;
   color: #2563ab;
 }
 
-.visit-link {
+#projects-content .visit-link {
   white-space: nowrap;
   color: #2563eb;
   text-decoration: none;
   font-weight: 500;
+  font-size: 17px;
 
   &:hover {
     text-decoration: underline;
   }
 }
 
-.description {
-  font-size: 1.1em;
+#projects-content .description {
+  font-size: 19px;
   line-height: 1.55;
   margin: 0 0 12px;
 }
 
-.tech-stack {
+#projects-content .tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-.tech-chip {
+#projects-content .tech-chip {
   background-color: rgb(52, 33, 73);
   color: rgb(212, 211, 211, 0.986);
   padding: 4px 12px;
   border-radius: 12px;
-  font-size: 0.85em;
+  font-size: 14px;
 }
 
-.screenshots {
+#projects-content .screenshots {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
@@ -147,7 +149,7 @@ mat-card-content#content {
   }
 
   figcaption {
-    font-size: 0.8em;
+    font-size: 14px;
     color: #555;
     margin-top: 6px;
     line-height: 1.3;
@@ -155,11 +157,11 @@ mat-card-content#content {
 }
 
 @media (max-width: 768px) {
-  #content-card {
+  #projects-content #content-card {
     width: calc(100% - 32px);
   }
 
-  .screenshots {
+  #projects-content .screenshots {
     grid-template-columns: 1fr;
   }
 }

@@ -2,7 +2,7 @@
     padding-top: 150px;
 }
 
-#content-card {
+#about-content #content-card {
     background-color: rgba(212, 211, 211, 0.986);
     max-width: 1250px;
     width: calc(100% - 90px);
@@ -14,27 +14,28 @@
     z-index: 2;
 }
 
-mat-card-content#content {
+#about-content mat-card-content#content {
     display: block;
     width: 100%;
     margin: 0;
     padding: 32px 40px;
     box-sizing: border-box;
     text-align: left;
+    font-size: 16px;
 }
 
-#title {
-    font-size: 2.25em;
+#about-content #title {
+    font-size: 33.5px;
     text-align: center;
     margin-top: 0;
 }
 
-p {
-    font-size: 1.25em;
-    line-height: 25px;
+#about-content p {
+    font-size: 19.5px;
+    line-height: 27px;
 }
 
-a {
+#about-content a {
     text-decoration: none;
 }
 
@@ -43,8 +44,7 @@ a {
         padding-top: 100px;
     }
 
-    #content-card {
+    #about-content #content-card {
         width: calc(100% - 32px);
     }
-
 }
