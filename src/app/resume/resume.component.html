@@ -1,97 +1,75 @@
 <div id="resume-content">
   <div id="content-card">
+    <div class="download-row">
+      <button mat-stroked-button (click)="downloadResume()">
+        Download Resume (DOCX)
+      </button>
+    </div>
+
     <div id="content">
       <header class="resume-header">
-        <h1>Evan Alexander</h1>
+        <h1>{{ resume.name }}</h1>
+        <p class="subtitle">{{ resume.title }}</p>
         <p class="contact-line">
-          Denver, CO | evanalexander012&#64;gmail.com
+          {{ resume.contact.location }} |
+          <a [href]="phoneHref">{{ resume.contact.phone }}</a>
+          |
+          {{ resume.contact.email }}
+          |
+          <a
+            [href]="resume.contact.websiteUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ resume.contact.website }}</a
+          >
         </p>
       </header>
 
       <section>
         <h3>Professional Summary</h3>
-        <p>
-          Full-stack software engineer with 4 years of experience building
-          enterprise web applications using Angular, TypeScript, C#, ASP.NET, and
-          SQL. Progressed from intern to Product Engineer II at Crowe LLP, with
-          hands-on experience in CI/CD and Agile Scrum. Uses AI-assisted
-          development (Claude) to accelerate delivery. PSM I certified
-          with a B.S. in Computer Science &amp; Engineering from Michigan State
-          University.
-        </p>
+        <p>{{ resume.summary }}</p>
       </section>
 
       <section>
         <h3>Technical Skills</h3>
-        <p>
-          <strong>Languages &amp; Frameworks:</strong> C#, ASP.NET, .NET, Angular,
-          TypeScript, JavaScript, Python, SQL
-        </p>
-        <p>
-          <strong>Tools &amp; Platforms:</strong> GitHub, Azure DevOps, Claude,
-          Linux
-        </p>
-        <p>
-          <strong>Methodologies:</strong> Agile, Scrum, CI/CD, DevOps, Code
-          Review, REST APIs, Cross-functional Collaboration
+        <p *ngFor="let category of resume.skills">
+          <strong>{{ category.label }}:</strong> {{ category.items }}
         </p>
       </section>
 
       <section>
-        <h3>Work Experience</h3>
+        <h3>Professional Experience</h3>
 
-        <div class="job">
+        <div class="job" *ngFor="let job of resume.experience">
           <div class="job-header">
             <div>
-              <strong class="employer">Crowe LLP</strong>
-              <span class="job-title"> — Product Engineer II</span>
-              <span class="job-location"> (Remote)</span>
+              <strong class="employer">{{ job.employer }}</strong>
+              <span class="job-location"> | {{ job.location }}</span>
             </div>
-            <span class="job-dates">June 2022 – Present</span>
+            <span class="job-dates">{{ job.dates }}</span>
           </div>
+          <p class="role-title">{{ job.title }}</p>
           <ul>
-            <li>
-              Develop and maintain full-stack features using Angular and C# /
-              ASP.NET for financial services clients.
-            </li>
-            <li>
-              Designed and optimized CI/CD pipelines for a team of five,
-              reducing manual steps and improving security compliance.
-            </li>
-            <li>
-              Collaborate with global teams on feature delivery and system
-              dependencies.
-            </li>
-            <li>
-              Integrate AI tools (Claude) for delivery acceleration, testing,
-              and refactoring.
-            </li>
-            <li>
-              Drive Agile Scrum ceremonies including sprint planning, backlog
-              refinement, and retrospectives.
-            </li>
+            <li *ngFor="let bullet of job.bullets">{{ bullet }}</li>
           </ul>
         </div>
+      </section>
 
-        <div class="job">
-          <div class="job-header">
-            <div>
-              <strong class="employer">Crowe LLP</strong>
-              <span class="job-title"> — Product Engineering Intern</span>
-              <span class="job-location"> (Remote)</span>
-            </div>
-            <span class="job-dates">June 2020 – June 2022</span>
-          </div>
-          <ul>
-            <li>
-              Promoted after two years of growth and production contributions.
-            </li>
-            <li>Built full-stack features in Angular and C#.</li>
-            <li>
-              Built a Python web scraper to automate state tax due date
-              retrieval.
-            </li>
-          </ul>
+      <section>
+        <h3>Projects</h3>
+
+        <div class="job" *ngFor="let project of resume.projects">
+          <p class="project-line">
+            <strong>{{ project.name }}</strong> |
+            <a
+              [href]="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ projectDisplayUrl(project.url) }}</a
+            >
+            | {{ project.tech }}
+          </p>
+          <p class="project-description">{{ project.description }}</p>
         </div>
       </section>
 
@@ -99,21 +77,20 @@
         <h3>Education</h3>
         <div class="job-header">
           <div>
-            <strong class="employer">Michigan State University</strong>
-            <span class="job-location"> — East Lansing, MI</span>
-            <p class="degree">
-              B.S. Computer Science &amp; Engineering; Minor: Entrepreneurship
-              and Innovation
-            </p>
+            <strong class="employer">{{ resume.education.school }}</strong>
+            <span class="job-location">
+              | {{ resume.education.location }}</span>
+            <p class="degree">{{ resume.education.degree }}</p>
+            <p class="minor">{{ resume.education.minor }}</p>
           </div>
-          <span class="job-dates">December 2022</span>
+          <span class="job-dates">{{ resume.education.date }}</span>
         </div>
       </section>
 
       <section>
         <h3>Certifications</h3>
-        <p>
-          <strong>Professional Scrum Master I (PSM I)</strong> — Scrum.org
+        <p *ngFor="let cert of resume.certifications">
+          <strong>{{ cert.name }}</strong> – {{ cert.issuer }}
         </p>
       </section>
     </div>

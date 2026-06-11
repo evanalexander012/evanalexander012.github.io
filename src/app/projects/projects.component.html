@@ -2,39 +2,26 @@
   <mat-card appearance="outlined" id="content-card">
     <mat-card-content id="content">
       <h1 id="title">Projects</h1>
+      <br>
       <p class="intro">
         Solo projects I've built outside of work — experiments, tools, and
         portfolio pieces.
       </p>
 
-      <article
-        class="project-card"
-        *ngFor="let project of projects"
-      >
+      <article class="project-card" *ngFor="let project of projects">
         <div class="project-header">
           <div>
             <h2>
-              <a
-                *ngIf="project.showVisitLink !== false"
-                [href]="project.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{ project.name }}</a
-              >
+              <a *ngIf="project.showVisitLink !== false" [href]="project.url" target="_blank"
+                rel="noopener noreferrer">{{ project.name }}</a>
               <span *ngIf="project.showVisitLink === false">{{
                 project.name
-              }}</span>
+                }}</span>
             </h2>
             <p class="tagline">{{ project.tagline }}</p>
           </div>
-          <a
-            *ngIf="project.showVisitLink !== false"
-            class="visit-link"
-            [href]="project.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Visit site →</a
-          >
+          <a *ngIf="project.showVisitLink !== false" class="visit-link" [href]="project.url" target="_blank"
+            rel="noopener noreferrer">Visit site →</a>
         </div>
 
         <p class="description">{{ project.description }}</p>
@@ -42,18 +29,13 @@
         <div class="tech-stack">
           <span class="tech-chip" *ngFor="let item of project.tech">{{
             item
-          }}</span>
+            }}</span>
         </div>
 
         <div class="screenshots" *ngIf="project.images?.length">
           <figure *ngFor="let image of project.images">
-            <a
-              class="screenshot-link"
-              [href]="image.src"
-              target="_blank"
-              rel="noopener noreferrer"
-              [title]="'Open full image: ' + image.alt"
-            >
+            <a class="screenshot-link" [href]="image.src" target="_blank" rel="noopener noreferrer"
+              [title]="'Open full image: ' + image.alt">
               <img [src]="image.src" [alt]="image.alt" loading="lazy" />
             </a>
             <figcaption>{{ image.alt }}</figcaption>
