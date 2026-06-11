@@ -72,6 +72,23 @@ header {
     z-index: 2;
 }
 
+#all-content.home-active {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+#all-content.home-active #body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    overflow: hidden;
+}
+
 #body {
     position: relative;
     z-index: 2;

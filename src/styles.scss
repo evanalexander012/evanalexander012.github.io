@@ -13,10 +13,20 @@ body {
   background-color: #4b0082;
 }
 
+html.home-page,
+body.home-page {
+  height: 100%;
+  overflow: hidden;
+}
+
 body.mat-typography {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   padding-bottom: 75px;
   background-color: #4b0082;
+}
+
+body.mat-typography.home-page {
+  padding-bottom: 0;
 }
 
 app-root {

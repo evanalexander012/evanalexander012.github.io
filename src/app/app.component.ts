@@ -1,4 +1,13 @@
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf, NgFor, KeyValuePipe } from '@angular/common';
 import { HomeComponent } from './home/home.component';
@@ -20,7 +29,7 @@ interface navButtons {
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'evanjayalexander.com';
   faLinkedin = faLinkedin;
   faGithub = faGithub;
@@ -35,13 +44,21 @@ export class AppComponent implements OnInit, AfterViewInit {
   
   navButtonsArray = Object.entries(this.pages);
 
+  constructor(
+    @Inject(DOCUMENT) private readonly document: Document,
+    @Inject(PLATFORM_ID) private readonly platformId: object,
+  ) {}
+
   ngOnInit(): void {
-    this.pages["home"].status = true;
-    
+    this.pages['home'].status = true;
+    this.updateHomeScrollLock();
   }
 
-  ngAfterViewInit(): void {
-    
+  ngAfterViewInit(): void {}
+
+  ngOnDestroy(): void {
+    this.document.body.classList.remove('home-page');
+    this.document.documentElement.classList.remove('home-page');
   }
 
   // Used to avoid pipe from auto sorting alphabetically
@@ -59,6 +76,17 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onNavButtonClick(pageName: string) {
     this.setPageStatus(pageName);
+    this.updateHomeScrollLock();
+  }
+
+  private updateHomeScrollLock(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const isHome = this.isActivePage('home');
+    this.document.body.classList.toggle('home-page', isHome);
+    this.document.documentElement.classList.toggle('home-page', isHome);
   }
 
   isActivePage(pageName: string): boolean {

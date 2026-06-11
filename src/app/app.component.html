@@ -1,4 +1,4 @@
-<div id="all-content">
+<div id="all-content" [class.home-active]="isActivePage('home')">
     <header>
         <div id="nav-container">
             <ng-container *ngFor="let page of pages | keyvalue: keepOrder">
